@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main() {
+    int jenis, d, m, j, h;
+    printf("Program Konversi DETIK ke D,M,J,H\n");
+    printf("1. Konversi DETIK ke Hari, Jam, Menit, Detik\n");
+    printf("=========================\n");
+    printf("Pilih jenis konverter :\n");
+    scanf("%d", &jenis);
+    printf("Masukkan jumlah detik : \n");
+    scanf("%d", &d);
+
+    if (jenis == 1) {
+        h = d / 86400; // Dibagi 1 hari = 86400 detik
+        j = d / 3600; // Dibagi 1 jam = 3600 detik
+        m = d / 60; // Dibagi 1 menit = 60 detik
+    
+        printf("Konversi waktu tersebut adalah : \n");
+        printf("Hari = %d\n", h);
+        printf("Jam = %d\n", j);
+        printf("Menit = %d\n", m);
+        printf("Detik = %d\n", d);
+        
+    } else if (jenis == 2) {
+        h = d / 86400; // Dibagi 1 hari = 86400 detik
+        d = d % 86400; // Sisa pake modulo (%)
+        j = d / 3600; // Dibagi 1 jam = 3600 detik
+        d = d % 3600; // Sisa pake modulo (%)
+        m = d / 60; // Dibagi 1 menit = 60 detik
+        d = d % 60; // Sisa pake modulo (%)
+        
+        printf("Konversi waktu tersebut adalah : \n");
+        printf("Hari = %dhari %djam %dmenit %ddetik \n", h,j,m,d);
+        
+    }
+
+    return 0;
+}
